@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GiveTheBookBack.Domain.Model
 {
-    public class Transaction
+    public class User
     {
         public int Id { get; set; }
-        public User Giver { get; set; }
-        public User Recipient { get; set; }
-        public Book Book { get; set; }
-        public DateTime Date { get; set; }
+        public string Password { get; set; }
+        public string Mail { get; set; }
+        public bool IsAddressAdd { get; set; }
+        public object Address { get; set; }
     }
 }
