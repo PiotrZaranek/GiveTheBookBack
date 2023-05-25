@@ -10,8 +10,8 @@ namespace GiveTheBookBack.Domain.Model
     {
         public int Id { get; set; }
         public string Password { get; set; }
-        public string Mail { get; set; }
-        public bool IsAddressAdd { get; set; }
+        public string Mail { get; set; }        
+        public int AddressRef { get; set; }
         public Address Address { get; set; }
     }
 }
