@@ -15,6 +15,8 @@ namespace GiveTheBookBack.Domain.Model
         public string Publisher { get; set; }
         public int NumberOfPages { get; set; }
         public string Description { get; set; }
+        public int UserRef { get; set; }
+        public User User { get ; set; }
         public Transaction Transaction { get; set; }
     }
 }

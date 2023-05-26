@@ -13,6 +13,7 @@ namespace GiveTheBookBack.Domain.Model
         public string Mail { get; set; }        
         public int AddressRef { get; set; }
         public Address Address { get; set; }
+        public ICollection<Book> Books { get; set; }
         public ICollection<Transaction> Transacions { get; set; }
     }
 }
