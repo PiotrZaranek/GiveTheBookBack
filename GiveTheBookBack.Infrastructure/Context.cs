@@ -19,7 +19,15 @@ namespace GiveTheBookBack.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);            
-        }
+            base.OnModelCreating(builder);
+
+            builder.Entity<User>()
+                .HasOne(e => e.Address).WithOne(b => b.User)
+                .HasForeignKey<User>(k => k.AddressRef);
+
+            builder.Entity<Transaction>()
+                .HasOne(e => e.Book).WithOne(e => e.Transaction)
+                .HasForeignKey<Transaction>(k => k.BookRef);
+        }        
     }
 }
