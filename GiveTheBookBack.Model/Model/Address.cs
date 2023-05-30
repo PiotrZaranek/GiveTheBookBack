@@ -15,6 +15,7 @@ namespace GiveTheBookBack.Domain.Model
         public string Region { get; set; }
         public string City { get; set; }
         public string PhoneNumber { get; set; }
+        public int UserRef { get; set; }
         public User User { get; set; }
     }
 }
