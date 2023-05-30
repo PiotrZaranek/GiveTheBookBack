@@ -23,10 +23,10 @@ namespace GiveTheBookBack.Infrastructure
 
             builder.Entity<User>()
                 .HasOne(e => e.Address).WithOne(b => b.User)
-                .HasForeignKey<User>(k => k.AddressRef);
+                .HasForeignKey<Address>(k => k.UserRef);
 
-            builder.Entity<Transaction>()
-                .HasOne(e => e.Book).WithOne(e => e.Transaction)
+            builder.Entity<Book>()
+                .HasOne(e => e.Transaction).WithOne(e => e.Book)
                 .HasForeignKey<Transaction>(k => k.BookRef);
         }        
     }
