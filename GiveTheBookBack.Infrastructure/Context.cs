@@ -32,14 +32,6 @@ namespace GiveTheBookBack.Infrastructure
             builder.Entity<User>()
                 .HasMany(e => e.Books).WithOne(e => e.User)
                 .HasForeignKey(k => k.UserRef);
-
-            builder.Entity<User>()
-                .HasMany(e => e.Transacions).WithOne(e => e.Giver)
-                .HasForeignKey(k => k.GiverRef);
-
-            builder.Entity<User>()
-                .HasMany(e => e.Transacions).WithOne(e => e.Recipient)
-                .HasForeignKey(k => k.RecipientRef);
         }        
     }
 }
