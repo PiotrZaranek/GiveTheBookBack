@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -10,4 +10,11 @@
     <ProjectReference Include="..\GiveTheBookBack.Model\GiveTheBookBack.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interface\" />
+    <Folder Include="Mapper\" />
+    <Folder Include="Service\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+  
 </Project>
