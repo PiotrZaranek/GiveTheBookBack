@@ -9,7 +9,7 @@ namespace GiveTheBookBack.Domain.Interface
 {
     public interface IBookRepository
     {
-        Task<IQueryable<Book>> GetAll();
+        Task<List<Book>> GetAll();
         Task<int> Add(Book book);
         Task<int> Delete(Book book);
         Task<Book> Get(int id);
