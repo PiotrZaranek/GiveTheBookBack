@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interface\" />
     <Folder Include="Model\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 
 </Project>
