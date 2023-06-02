@@ -10,10 +10,10 @@ namespace GiveTheBookBack.Infrastructure
 {
     public class Context : DbContext
     {
-        DbSet<Book> Books { get; set; }
-        DbSet<User> Users { get; set; }
-        DbSet<Address> Addresses { get; set; }
-        DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
         public Context(DbContextOptions<Context> options) : base(options) { }
 
