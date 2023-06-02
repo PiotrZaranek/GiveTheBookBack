@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GiveTheBookBack.Domain.Interface;
 using GiveTheBookBack.Domain.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace GiveTheBookBack.Infrastructure.Repository
 {
@@ -36,9 +37,14 @@ namespace GiveTheBookBack.Infrastructure.Repository
             return await _context.Books.FindAsync(id);
         }
 
-        public async Task<IQueryable<Book>> GetAll()
+        public async Task<List<Book>> GetAll()
         {
-            throw new NotImplementedException();
+            return await GetAllActiveBooks().ToListAsync();
+        }
+
+        private IQueryable<Book> GetAllActiveBooks() 
+        {
+            return _context.Books.Where(b => b.IsActive == true);
         }
     }
 }
