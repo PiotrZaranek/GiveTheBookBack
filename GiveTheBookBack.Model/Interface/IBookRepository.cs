@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GiveTheBookBack.Domain.Interface
 {
-    internal interface IBookRepository
+    public interface IBookRepository
     {
         IQueryable<Book> GetAll();
         int Add(Book book);
