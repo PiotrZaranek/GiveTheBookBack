@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GiveTheBookBack.Domain.Interface
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
     }
 }
