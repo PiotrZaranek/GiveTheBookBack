@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace GiveTheBookBack.Domain.Interface
 {
-    internal interface IBookRepository
+    public interface IBookRepository
     {
-        IQueryable<Book> GetAll();
-        int Add(Book book);
-        int Delete(Book book);
-        Book Get(int id);
+        Task<List<Book>> GetAll();
+        Task<int> Add(Book book);
+        Task<int> Delete(Book book);
+        Task<Book> Get(int id);
     }
 }
