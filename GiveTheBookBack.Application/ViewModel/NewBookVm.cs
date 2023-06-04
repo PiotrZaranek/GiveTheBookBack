@@ -1,4 +1,6 @@
-﻿using GiveTheBookBack.Domain.Model;
+﻿using AutoMapper;
+using GiveTheBookBack.Application.Mapper;
+using GiveTheBookBack.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GiveTheBookBack.Application.ViewModel
 {
-    public class NewBookVm
+    public class NewBookVm : IMapFrom<Book>
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -18,5 +20,10 @@ namespace GiveTheBookBack.Application.ViewModel
         public bool IsActive { get; set; }
         public int UserRef { get; set; }
         public User User { get; set; }
+
+        public void Mapping(Profile profile)
+        {
+            profile.CreateMap<NewBookVm, Book>();
+        }
     }
 }
