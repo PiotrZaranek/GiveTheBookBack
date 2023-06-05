@@ -16,7 +16,7 @@ namespace GiveTheBookBack.API
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddApplication();
-            
+            builder.Services.AddInfrastructure();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
