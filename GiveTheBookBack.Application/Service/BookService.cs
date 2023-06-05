@@ -55,8 +55,13 @@ namespace GiveTheBookBack.Application.Service
 
         public ListBookForListVm GetAll()
         {
-            var bookList = _repository.GetAll().Result;
-            return null;
+            var listBikeVm = _mapper.Map<List<Book>, List<BookForListVm>>(_repository.GetAll().Result);
+
+            return new ListBookForListVm()
+            {
+                BookList = listBikeVm,
+                Count = listBikeVm.Count
+            };
         }
     }
 }
