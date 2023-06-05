@@ -12,9 +12,8 @@ namespace GiveTheBookBack.Test.Services
 {
     public static class Setup
     {
-        public static BookService CreateBookService() 
-        {
-            var repo = new Mock<IBookRepository>();
+        public static BookService CreateBookService(Mock<IBookRepository> repo) 
+        {            
             var mapp = new Mock<IMapper>();
             return new BookService(repo.Object, mapp.Object);
         }
