@@ -18,9 +18,8 @@ namespace GiveTheBookBack.Test.Services.BookServicesTest
         [Fact]
         public void Add_ShouldInvoke_BookRepositoryAdd()
         {
-            var repo = new Mock<IBookRepository>();
-            var mapp = new Mock<IMapper>();
-            var ser = new BookService(repo.Object, mapp.Object);
+            var repo = new Mock<IBookRepository>();            
+            var ser = Setup.CreateBookService(repo);
             
             var result = ser.Add(It.IsAny<NewBookVm>());
 
@@ -31,8 +30,7 @@ namespace GiveTheBookBack.Test.Services.BookServicesTest
         public void AddReturnType_ShouldBe_Int()
         {
             var repo = new Mock<IBookRepository>();
-            var mapp = new Mock<IMapper>();
-            var ser = new BookService(repo.Object, mapp.Object);
+            var ser = Setup.CreateBookService(repo);
             repo.Setup(m => m.Add(It.IsAny<Book>())).Returns(Task<int>.FromResult(1));
 
             var result = ser.Add(It.IsAny<NewBookVm>());
