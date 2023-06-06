@@ -24,4 +24,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GiveTheBookBack.Application\GiveTheBookBack.Application.csproj" />
+    <ProjectReference Include="..\GiveTheBookBack.Model\GiveTheBookBack.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
