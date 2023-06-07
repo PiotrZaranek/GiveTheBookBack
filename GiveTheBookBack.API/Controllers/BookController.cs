@@ -24,14 +24,14 @@ namespace GiveTheBookBack.API.Controllers
             return Ok("Add");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id) 
         {
             return Ok("Delete");
         }
 
         [HttpGet("{id}")]
-        public ActionResult<BookForDetailsVm> Details()
+        public ActionResult<BookForDetailsVm> Details(int id)
         {
             return Ok("Details");
         }
