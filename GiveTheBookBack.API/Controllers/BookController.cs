@@ -21,25 +21,43 @@ namespace GiveTheBookBack.API.Controllers
         [HttpPost]
         public IActionResult Add(NewBookVm bookVm)
         {
-            return Ok("Add");
+            var id = _bookService.Add(bookVm);
+            return Ok(id);
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id) 
         {
-            return Ok("Delete");
+            var result = _bookService.Delete(id);
+            if(result == 0)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(result);
+            }            
         }
 
         [HttpGet("{id}")]
         public ActionResult<BookForDetailsVm> Details(int id)
         {
-            return Ok("Details");
+            var book = _bookService.Details(id);
+            if(book != null)
+            {
+                return Ok(book);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         [HttpGet]
         public ActionResult<ListBookForListVm> GetAll()
         {
-            return Ok("GetAll");
+            var books = _bookService.GetAll();
+            return Ok(books);
         }
     }
 }
