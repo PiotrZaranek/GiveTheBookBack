@@ -20,13 +20,12 @@ namespace GiveTheBookBack.Test.Controllers.BookControllerTest
         {
             var ser = new Mock<IBookService>();
             var con = new BookController(ser.Object);
-            ser.Setup(m => m.Details(It.IsAny<int>())).Returns(new BookForDetailsVm());
+            ser.Setup(m => m.Details(It.IsAny<int>())).Returns(new BookForDetailsVm() { Title = "abcd"});
 
             var result = con.Details(It.IsAny<int>());
-
-            result.Should().NotBeOfType<OkObjectResult>();
-            result.Value.Should().NotBeNull();
-            result.Value.Should().BeOfType<BookForDetailsVm>();
+                     
+            result.Result.Should().BeOfType<OkObjectResult>();
+            result.Value.Title.Should().Be("abcd");
         }
 
         [Fact]
