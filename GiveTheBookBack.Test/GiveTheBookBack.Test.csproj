@@ -25,7 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GiveTheBookBack.API\GiveTheBookBack.API.csproj" />
     <ProjectReference Include="..\GiveTheBookBack.Application\GiveTheBookBack.Application.csproj" />
+    <ProjectReference Include="..\GiveTheBookBack.Infrastructure\GiveTheBookBack.Infrastructure.csproj" />
     <ProjectReference Include="..\GiveTheBookBack.Model\GiveTheBookBack.Domain.csproj" />
   </ItemGroup>
 
