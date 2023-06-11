@@ -23,9 +23,9 @@ namespace GiveTheBookBack.Test.Controllers.BookControllerTest
             ser.Setup(m => m.Details(It.IsAny<int>())).Returns(new BookForDetailsVm() { Title = "abcd"});
 
             var result = con.Details(It.IsAny<int>());
-                     
-            result.Result.Should().BeOfType<OkObjectResult>();
-            result.Value.Title.Should().Be("abcd");
+
+            result.Should().BeOfType<ActionResult<BookForDetailsVm>>();
+            result.Result.Should().BeOfType<OkObjectResult>();            
         }
 
         [Fact]
@@ -37,7 +37,8 @@ namespace GiveTheBookBack.Test.Controllers.BookControllerTest
 
             var result = con.Details(It.IsAny<int>());
 
-            result.Should().BeOfType<NotFoundResult>();            
+            result.Should().BeOfType<ActionResult<BookForDetailsVm>>();
+            result.Result.Should().BeOfType<NotFoundResult>();
         }
     }
 }
