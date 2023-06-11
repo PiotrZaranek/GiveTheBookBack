@@ -23,9 +23,8 @@ namespace GiveTheBookBack.Test.Controllers.BookControllerTest
 
             var result = con.GetAll();
 
-            result.Should().BeOfType<OkObjectResult>();
-            result.Value.Should().NotBeNull();
-            result.Value.Should().BeOfType<ListBookForListVm>();
+            result.Should().BeOfType<ActionResult<ListBookForListVm>>();
+            result.Result.Should().BeOfType<OkObjectResult>();
         }
     }
 }
