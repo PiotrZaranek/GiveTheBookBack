@@ -11,15 +11,15 @@ namespace GiveTheBookBack.Application.ViewModel
 {
     public class NewBookVm : IMapFrom<Book>
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string Publisher { get; set; }
         public int NumberOfPages { get; set; }
         public string Description { get; set; }
-        public bool IsActive { get; set; }
-        public int UserRef { get; set; }
-        public User User { get; set; }
+        public bool? IsActive { get; set; }
+        public int? UserRef { get; set; }
+        public User? User { get; set; }
 
         public void Mapping(Profile profile)
         {
