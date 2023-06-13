@@ -10,8 +10,8 @@ namespace GiveTheBookBack.Application.Interface
 {
     public interface IUserService
     {
-        bool Authenticate(LoginUserVm loginModel);
-        void Registration(LoginModel userVm);
+        bool Authenticate(LoginModel loginModel);
+        void Registration(NewUserVm userVm);
         void AddAddress(NewAddressVm addressVm);
         AddressForEditVm GetAddressForEdit(int id);
         void EditAddress(AddressForEditVm addressVm);
