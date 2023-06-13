@@ -14,6 +14,11 @@ namespace GiveTheBookBack.Test.Services
 {
     public static class Setup
     {
+        public static UserService CreateUserService(Mock<IUserRepository> repo) 
+        { 
+            return new UserService(repo.Object, AddMapper());
+        }
+
         public static BookService CreateBookService(Mock<IBookRepository> repo) 
         {                       
             return new BookService(repo.Object, AddMapper());
