@@ -28,7 +28,7 @@ namespace GiveTheBookBack.Application.Service
             _repository.AddAddress(address);
         }
 
-        public bool Authenticate(LoginUserVm loginModel)
+        public bool Authenticate(LoginModel loginModel)
         {
             throw new NotImplementedException();
         }
