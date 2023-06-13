@@ -1,5 +1,6 @@
 ﻿using GiveTheBookBack.Domain.Interface;
 using GiveTheBookBack.Domain.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +11,34 @@ namespace GiveTheBookBack.Infrastructure.Repository
 {
     public class UserRepository : IUserRepository
     {
-        public Task AddAddress(Address address)
+        readonly private Context _context;
+
+        public UserRepository(Context context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<Address> GetAddress(int id)
+        public async Task AddAddress(Address address)
         {
-            throw new NotImplementedException();
+            await _context.Addresses.AddAsync(address);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<bool> IsUserExist(User user)
+        public async Task<Address> GetAddress(int id)
         {
-            throw new NotImplementedException();
+            var address = await _context.Addresses.FindAsync(id);
+            return address;
         }
 
-        public Task Registration(User user)
+        public async Task<bool> IsUserExist(User user)
         {
-            throw new NotImplementedException();
+            return await _context.Users.AnyAsync(u => u.Id == user.Id);
+        }
+
+        public async Task Registration(User user)
+        {
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
         }
     }
 }
