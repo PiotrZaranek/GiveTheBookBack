@@ -24,6 +24,12 @@ namespace GiveTheBookBack.Infrastructure.Repository
             await _context.SaveChangesAsync();
         }
 
+        public async Task EditAddress(Address address)
+        {
+            _context.Addresses.Update(address);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<Address> GetAddress(int id)
         {
             var address = await _context.Addresses.FindAsync(id);
