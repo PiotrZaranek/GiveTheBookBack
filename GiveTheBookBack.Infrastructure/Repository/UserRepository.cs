@@ -24,6 +24,21 @@ namespace GiveTheBookBack.Infrastructure.Repository
             await _context.SaveChangesAsync();
         }
 
+        public async Task<bool> Authenticate(LoginModel loginModel)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(a => a.Mail == loginModel.Mail);
+
+            if(user != null)
+            {
+                if(user.Password == loginModel.Password)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public async Task EditAddress(Address address)
         {
             _context.Addresses.Update(address);
