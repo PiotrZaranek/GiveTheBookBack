@@ -14,5 +14,6 @@ namespace GiveTheBookBack.Domain.Interface
         Task AddAddress(Address address);
         Task<Address> GetAddress(int id);
         Task EditAddress(Address address);
+        Task<bool> Authenticate(User user);
     }
 }
