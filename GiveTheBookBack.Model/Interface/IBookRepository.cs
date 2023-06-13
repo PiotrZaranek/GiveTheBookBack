@@ -13,5 +13,6 @@ namespace GiveTheBookBack.Domain.Interface
         Task<int> Add(Book book);
         Task<int> Delete(Book book);
         Task<Book> Get(int id);
+        Task<List<Book>> GetBooksByUserId(int userId);
     }
 }

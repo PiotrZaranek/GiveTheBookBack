@@ -42,9 +42,19 @@ namespace GiveTheBookBack.Infrastructure.Repository
             return await GetAllActiveBooks().ToListAsync();
         }
 
+        public async Task<List<Book>> GetBooksByUserId(int userId)
+        {
+            return await GetAllUserBooks(userId).ToListAsync();
+        }
+
         private IQueryable<Book> GetAllActiveBooks() 
         {
             return _context.Books.Where(b => b.IsActive == true);
+        }
+
+        private IQueryable<Book> GetAllUserBooks(int userId)
+        {
+            return _context.Books.Where(a => a.UserRef == userId);
         }
     }
 }
