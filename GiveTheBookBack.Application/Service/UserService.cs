@@ -30,7 +30,7 @@ namespace GiveTheBookBack.Application.Service
 
         public bool Authenticate(LoginModel loginModel)
         {
-            throw new NotImplementedException();
+            return _repository.Authenticate(loginModel).Result;
         }
 
         public void EditAddress(AddressForEditVm addressVm)
