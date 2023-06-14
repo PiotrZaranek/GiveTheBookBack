@@ -7,7 +7,7 @@ namespace GiveTheBookBack.Domain.Model
         public int Id { get; set; }
         public int GiverRef { get; set; }        
         public int RecipientRef { get; set; }  
-        public TransactionStateEnum.State State { get; set; }
+        public State State { get; set; }
         public int BookRef { get; set; }
         public Book Book { get; set; }
         public DateTime Date { get; set; }
