@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace GiveTheBookBack.Domain.Enums
 {
-    public class RegistrationResultEnum
+    public enum RegistrationResult
     {
-        public enum RegistrationResult 
-        { 
-            UserExist,
-            UserAdded
-        }
+        UserExist,
+        UserAdded
     }
 }
