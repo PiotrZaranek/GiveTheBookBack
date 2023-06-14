@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GiveTheBookBack.Application.Interface;
 using GiveTheBookBack.Application.ViewModel;
+using GiveTheBookBack.Domain.Enums;
 using GiveTheBookBack.Domain.Interface;
 using GiveTheBookBack.Domain.Model;
 using System;
@@ -53,10 +54,11 @@ namespace GiveTheBookBack.Application.Service
             }
         }
 
-        public void Registration(NewUserVm userVm)
+        public RegistrationResult Registration(NewUserVm userVm)
         {
             var user = _mapper.Map<User>(userVm);
             _repository.Registration(user);
+            return 0;
         }
     }
 }
