@@ -12,7 +12,7 @@ namespace GiveTheBookBack.Application.Interface
     public interface IUserService
     {
         bool Authenticate(LoginModel loginModel);
-        RegistrationResultEnum.RegistrationResult Registration(NewUserVm userVm);
+        RegistrationResult Registration(NewUserVm userVm);
         void AddAddress(NewAddressVm addressVm);
         AddressForEditVm GetAddressForEdit(int id);
         void EditAddress(AddressForEditVm addressVm);
