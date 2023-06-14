@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace GiveTheBookBack.Domain.Enums
 {
-    public class TransactionStateEnum
+    public enum State
     {
-        public enum State
-        {
-            Waiting,
-            Confirm,
-            Refuse
-        }
+        Waiting,
+        Confirm,
+        Refuse
     }
 }
