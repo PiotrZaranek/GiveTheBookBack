@@ -42,7 +42,7 @@ namespace GiveTheBookBack.Application.Service
 
         public AddressForEditVm GetAddressForEdit(int id)
         {
-            var address = _repository.GetAddress(id);
+            var address = _repository.GetAddress(id).Result;
 
             if(address != null)
             {
