@@ -53,7 +53,7 @@ namespace GiveTheBookBack.Infrastructure.Repository
 
         public async Task<bool> IsUserExist(User user)
         {
-            return await _context.Users.AnyAsync(u => u.Id == user.Id);
+            return await _context.Users.AnyAsync(u => u.Mail == user.Mail);
         }
 
         public async Task Registration(User user)
