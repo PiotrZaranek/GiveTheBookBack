@@ -57,8 +57,16 @@ namespace GiveTheBookBack.Application.Service
         public RegistrationResult Registration(NewUserVm userVm)
         {
             var user = _mapper.Map<User>(userVm);
-            _repository.Registration(user);
-            return 0;
+
+            if(_repository.IsUserExist(user).Result)
+            {
+                return RegistrationResult.UserExist;
+            }
+            else
+            {
+                _repository.Registration(user);
+                return RegistrationResult.UserAdded;
+            }            
         }
     }
 }
