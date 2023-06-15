@@ -17,6 +17,7 @@ namespace GiveTheBookBack.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddTransient<IBookService, BookService>();
+            services.AddTransient<IUserService, UserService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }
