@@ -14,8 +14,17 @@ namespace GiveTheBookBack.Test.Controllers
     {
         public static UserController CreateUserController(Mock<IUserService> ser)
         {
-            var con = new Mock<IConfiguration>();
-            return new UserController(ser.Object, con.Object);
+            var config = new Dictionary<string, string>()
+            {
+                { "Jwt:Key", "Password" },
+                { "Jwt:Issuer", "login.com" }
+            };
+
+            IConfiguration con = new ConfigurationBuilder()
+                .AddInMemoryCollection(config)
+                .Build();
+
+            return new UserController(ser.Object, con);
         }
     }
 }
