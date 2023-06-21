@@ -16,7 +16,7 @@ namespace GiveTheBookBack.Test.Controllers
         {
             var config = new Dictionary<string, string>()
             {
-                { "Jwt:Key", "Password" },
+                { "Jwt:Key", "Secret Key for user" },
                 { "Jwt:Issuer", "login.com" }
             };
 

@@ -35,7 +35,7 @@ namespace GiveTheBookBack.Test.Controllers.UserControllerTest
             
             var result = con.Login(It.IsAny<LoginModel>());
 
-            result.Should().BeOfType<OkResult>();
+            result.Should().BeOfType<OkObjectResult>();            
         }
     }
 }
